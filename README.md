@@ -1,11 +1,13 @@
 <div align="center">
 
-# 🌌 Voidplay
+<img src="favicon.svg" width="84" alt="Voidplay logo">
+
+# Voidplay
 
 **Prywatna, zamknięta platforma do oglądania filmów.**
 
-Dostęp tylko przez klucz w linku — kosmiczny ekran logowania, elegancki player
-i automatyczna biblioteka budowana z plików w folderze `media`.
+Dostęp tylko przez klucz w linku, z kosmicznym ekranem logowania, eleganckim
+playerem i automatyczną biblioteką budowaną z plików w folderze `media`.
 
 </div>
 
@@ -13,27 +15,27 @@ i automatyczna biblioteka budowana z plików w folderze `media`.
 
 ## ✨ Funkcje
 
-- **Dostęp na klucz** (`?key=...`) — wchodzą tylko osoby, którym udostępnisz link; klucz zapamiętywany w ciasteczku.
-- **Wiele kluczy** — osobny dla każdej osoby, łatwo odebrać dostęp jednej bez ruszania pozostałych.
-- **Automatyczna biblioteka** — lista filmów budowana z folderu `media` (miniatury z klatki, oczyszczone tytuły).
+- **Dostęp na klucz** (`?key=...`): wchodzą tylko osoby, którym udostępnisz link; klucz zapamiętywany w ciasteczku.
+- **Wiele kluczy**: osobny dla każdej osoby, łatwo odebrać dostęp jednej bez ruszania pozostałych.
+- **Automatyczna biblioteka**: lista filmów budowana z folderu `media` (miniatury z klatki, oczyszczone tytuły).
 - **Data dodania i licznik odtworzeń** na każdym kafelku (liczniki zapisywane atomowo w `data/views.json`).
-- **Player [Plyr](https://plyr.io)** — przewijanie, prędkość odtwarzania, pełny ekran.
-- **Streaming z obsługą HTTP Range** — płynne przewijanie dużych plików mp4.
-- **Bezpieczne pliki** — wideo niedostępne bezpośrednio, serwowane wyłącznie przez chroniony `stream.php`.
-- **Kosmiczny gate** — animowane gwiezdne tło (canvas), „oddychająca" poświata, logo Orbita, pole z podglądem klucza, stany błędu / ładowania / sukcesu. Respektuje `prefers-reduced-motion`.
+- **Player [Plyr](https://plyr.io)**: przewijanie, prędkość odtwarzania, pełny ekran.
+- **Streaming z obsługą HTTP Range**: płynne przewijanie dużych plików mp4.
+- **Bezpieczne pliki**: wideo niedostępne bezpośrednio, serwowane wyłącznie przez chroniony `stream.php`.
+- **Kosmiczny gate**: animowane gwiezdne tło (canvas), „oddychająca" poświata, logo Orbita, pole z podglądem klucza, stany błędu / ładowania / sukcesu. Respektuje `prefers-reduced-motion`.
 
 ## 🚀 Szybki start
 
 ```bash
-git clone https://github.com/UZYTKOWNIK/voidplay.git
-cd voidplay
+git clone https://github.com/vTomsonek/VoidPlay.git
+cd VoidPlay
 cp config.example.php config.php      # ustaw własne klucze dostępu
 ```
 
 Wrzuć pliki `.mp4` do folderu `media/`, uruchom serwer (np. XAMPP) i wejdź pod:
 
 ```
-http://localhost/voidplay/?key=TWOJ_KLUCZ
+http://localhost/VoidPlay/?key=TWOJ_KLUCZ
 ```
 
 Wygenerowanie losowego klucza:
@@ -63,8 +65,7 @@ Wszystko ustawiasz w `config.php` (plik lokalny, poza repo):
 Pełny przewodnik dla **Ubuntu 24.04 + Apache2 + PHP 8.3-FPM** znajdziesz w
 [`DEPLOY.md`](DEPLOY.md). Najważniejsze:
 
-- Blokadę dostępu do `media/` i `data/` ustaw w konfiguracji vhosta — na Apache2
-  `.htaccess` bywa domyślnie ignorowany (gotowy plik: [`player-vhost.conf`](player-vhost.conf)).
+- Blokadę dostępu do `media/` i `data/` ustaw w konfiguracji vhosta, bo na Apache2 `.htaccess` bywa domyślnie ignorowany (gotowy plik: [`player-vhost.conf`](player-vhost.conf)).
 - Używaj **HTTPS** (klucz leci w URL).
 - Stosuj osobne klucze per osoba.
 
@@ -87,7 +88,7 @@ DEPLOY.md            Przewodnik wdrożenia
 
 - `config.php` (klucze), pliki w `media/` oraz `data/` są wykluczone z repozytorium.
 - Wideo serwuje wyłącznie `stream.php` po weryfikacji klucza; foldery `media/` i `data/` są zablokowane przed dostępem z zewnątrz.
-- Klucz w URL trafia do logów serwera i jest widoczny bez HTTPS — **używaj HTTPS**.
+- Klucz w URL trafia do logów serwera i jest widoczny bez HTTPS, dlatego **używaj HTTPS**.
 
 ---
 
