@@ -1,0 +1,24 @@
+# --- Sekrety / konfiguracja lokalna ---
+# Zawiera klucze dostepu - NIE wrzucamy na GitHub.
+config.php
+
+# --- Pliki wideo ---
+# Duze i prywatne - nie trzymamy ich w repo.
+media/*
+!media/.htaccess
+!media/.gitkeep
+
+# --- Dane runtime (liczniki odtworzen) ---
+data/*
+!data/.htaccess
+!data/.gitkeep
+
+# --- Materialy projektowe (handoff, nie wchodza do produkcji) ---
+design_handoff_voidplay_gate/
+
+# --- System / edytory ---
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

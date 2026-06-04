@@ -1,0 +1,3 @@
+# Dane aplikacji (liczniki) – brak dostępu z zewnątrz.
+Require all denied
+Deny from all

@@ -1,0 +1,4 @@
+# Blokuje bezpośredni dostęp do plików wideo.
+# Filmy są dostępne wyłącznie przez stream.php (z poprawnym kluczem).
+Require all denied
+Deny from all
